@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>[LeetCode题解]1824.最少侧跳次数 - Zzy&#39;s Note</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Zzy" /><meta name="description" content="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://TrivialZzy.github.io/post/leetcode%E9%A2%98%E8%A7%A31824.%E6%9C%80%E5%B0%91%E4%BE%A7%E8%B7%B3%E6%AC%A1%E6%95%B0/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.6c270d724e4ce8dd188f6174b40a2e585daa1138a663be35fc78b53bfd5eeb1b.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="[LeetCode题解]1824.最少侧跳次数" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://TrivialZzy.github.io/post/leetcode%E9%A2%98%E8%A7%A31824.%E6%9C%80%E5%B0%91%E4%BE%A7%E8%B7%B3%E6%AC%A1%E6%95%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-21T00:56:08+08:00" />
+<meta property="article:modified_time" content="2023-01-21T00:56:08+08:00" />
+<meta itemprop="name" content="[LeetCode题解]1824.最少侧跳次数">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-21T00:56:08+08:00" />
+<meta itemprop="dateModified" content="2023-01-21T00:56:08+08:00" />
+<meta itemprop="wordCount" content="672">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[LeetCode题解]1824.最少侧跳次数"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Zzy&#39;s Note</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Zzy&#39;s Note</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">[LeetCode题解]1824.最少侧跳次数</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-01-21 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目链接">题目链接</a></li>
+        <li><a href="#题解">题解</a>
+          <ul>
+            <li><a href="#分析">分析</a></li>
+            <li><a href="#优化">优化</a></li>
+          </ul>
+        </li>
+        <li><a href="#ac-代码">AC 代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="题目链接">题目链接</h2>
+<p><a href="https://leetcode.cn/problems/minimum-sideway-jumps/">1824. 最少侧跳次数</a></p>
+<h2 id="题解">题解</h2>
+<h3 id="分析">分析</h3>
+<p>记 $dp[i][j]$ 是到达第 $i$ 个点第 $j$ 条跑道的最小侧跳次数, 记 $(i, j)$ 为第 $i$ 个点第 $j$ 条跑道的位置, 其中 $0\le i\le n, j = 1, 2, 3$.</p>
+<p>由题意知, $dp[0][2] = 0, dp[0][1] = dp[0][3] = 1$, 记 $(i, j)$ 位置为障碍时 $dp[i][j] = INF$.</p>
+<p>下面对于 $1\le i\le n$ 的情况进行考虑.</p>
+<p>固定 $j$:</p>
+<ul>
+<li>
+<p>若 $(i, j)$ 为障碍, 则 $dp[i][j] = INF$;</p>
+</li>
+<li>
+<p>若 $(i, j)$ 不为障碍:</p>
+<ul>
+<li>若 $dp[i-1][j] = INF$, 则无法通过 $(i-1, j)$ 到达 $(i, j)$, 此时先记 $dp[i][j] = INF$;</li>
+<li>若 $dp[i-1][j] \neq INF$ , 则可以通过 $(i-1, j)$ 到达 $(i, j)$, 此时先记 $dp[i][j] = dp[i-1][j]$.</li>
+</ul>
+<p>此时可以看出: $dp[i][j] = dp[i-1][j]$.</p>
+</li>
+</ul>
+<p>经过上述讨论, $dp[i][j]$ 的值只取决于第 $i$ 个点剩下两条跑道侧跳到第 $j$ 条跑道的情况了, 并且从其他两条跑道侧跳过来之前, 一定不在第 $i$ 个点的三条跑道上. 记 $k$ 为其他两条跑道的任意一条, 则此时 $dp[i][j]$ 的情况只取决于 $(i, k)$ 的状态和 $dp[i-1][k]$ 的情况, 而这与上面讨论得到的 $dp[i][k]$ 有关.</p>
+<p>我们进行接下来的讨论, 不妨只讨论 $j = 1$ 的情况, 对于 $j = 2, 3$ 的情况有类似的结果, 不在此赘述.</p>
+<p>此时容易看出</p>
+<p>$$
+dp[i][1] = \min(dp[i][1], dp[i][2]+1, dp[i][3]+1) = \min(dp[i][1], \min(dp[i][2], dp[i][3])+1),
+$$</p>
+<p>从而最终的结果为</p>
+<p>$$
+\min(dp[n][1], dp[n][2], dp[n][3]).
+$$</p>
+<p>至此, 题目分析完毕.</p>
+<h3 id="优化">优化</h3>
+<ul>
+<li>
+<p>我们在建立数组 $dp[n+1][4]$ 时, $dp[i][0]$ 始终没有用到, 故我们可以记三条跑道的编号分别为 $0, 1, 2$ , 此时可以节约空间.</p>
+</li>
+<li>
+<p>我们发现考虑 $dp[i][j]$ $(1\le i\le n, j = 0, 1, 2)$ 的值时只与 $(i, j)$ 的状态和 $dp[i-1][j]$ 的值有关, 故我们可以用数组 <code>arr[3]</code> 去存 $dp[i][j]$ $(0\le i\le n, j = 0, 1, 2)$ 的值, 滚动更新, 可以节约空间.</p>
+</li>
+</ul>
+<h2 id="ac-代码">AC 代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">minSideJumps</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">ob</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">ob</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="c1">// 此时 N = n+1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">ob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 此时表示 (i, j) 的位置为障碍; 当不为障碍时, 由分析和优化知, 值不会变
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// (j, j+1, j+2) 刚好是 3的剩余类 的代表元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">ob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 只有当 (i, j) 的位置不为障碍时才能由其他跑道侧跳到达
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">min</span><span class="p">(</span><span class="n">arr</span><span class="p">[(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">],</span> <span class="n">arr</span><span class="p">[(</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nf">min</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">min</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">算法竞赛查询笔记</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/hugo-%E5%8D%9A%E5%AE%A2%E4%B8%AD%E7%9A%84-markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">
+            <span class="next-text nav-default">Hugo 博客中的 Markdown 常用语法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Zzy</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script>
+  function createCopyButton(highlightDiv) {
+    const div = document.createElement("div");
+    div.className = "copy-code";
+    div.innerText = "Copy";
+    div.addEventListener("click", () =>
+      copyCodeToClipboard(div, highlightDiv)
+    );
+    addCopyButtonToDom(div, highlightDiv);
+  }
+
+  async function copyCodeToClipboard(button, highlightDiv) {
+    const codeToCopy = highlightDiv.querySelector(":last-child > .chroma > code")
+      .innerText;
+    await navigator.clipboard.writeText(codeToCopy);
+    button.blur();
+    button.innerText = "Copied!";
+    setTimeout(() => button.innerText = "Copy", 2000);
+  }
+
+  function addCopyButtonToDom(button, highlightDiv) {
+    highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    const wrapper = document.createElement("div");
+    wrapper.className = "highlight-wrapper";
+    highlightDiv.parentNode.insertBefore(wrapper, highlightDiv);
+    wrapper.appendChild(highlightDiv);
+  }
+
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(!isMobile){
+     document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+  }
+</script>  
+
+
+</body>
+</html>
