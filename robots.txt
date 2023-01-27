@@ -1,2 +1,8 @@
 User-agent: *
 Sitemap: https://TrivialZzy.github.io/sitemap.xml
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: baiduspider
+Disallow: /
