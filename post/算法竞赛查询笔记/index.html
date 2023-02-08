@@ -45,7 +45,7 @@
 <meta itemprop="name" content="算法竞赛查询笔记">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-18T14:30:37+08:00" />
 <meta itemprop="dateModified" content="2023-01-18T14:30:37+08:00" />
-<meta itemprop="wordCount" content="1548">
+<meta itemprop="wordCount" content="1995">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="算法竞赛查询笔记"/>
 <meta name="twitter:description" content=""/>
@@ -139,6 +139,8 @@
       <ul>
         <li><a href="#array">array</a></li>
         <li><a href="#vector">vector</a></li>
+        <li><a href="#deque">deque</a></li>
+        <li><a href="#list">list</a></li>
       </ul>
     </li>
     <li><a href="#常用算法">常用算法</a></li>
@@ -551,23 +553,7 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span> <span class="n">arr1</span><span class="p">{};</span>
-</span></span><span class="line"><span class="cl"><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span> <span class="n">arr2</span><span class="p">{};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">arr1</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">73</span><span class="p">);</span> <span class="c1">// arr1: 73 73 73 73 73
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">arr1</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">arr2</span><span class="p">);</span> <span class="c1">//arr1: 0 0 0 0 0; arr2: 73 73 73 73 73
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>遍历元素</p>
+<p>遍历元素</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -600,18 +586,11 @@
 <p>定义与初始化</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span> <span class="c1">// vec为空
@@ -619,13 +598,6 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span> <span class="c1">// N可为变量; val为各元素初始值
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="c1">// vec为v的拷贝, 线性复杂度
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="n">val3</span><span class="p">};</span> <span class="c1">// {}内可初始化
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span> <span class="c1">// v为空
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="c1">// v: 0 0 0 0 0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">u</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span><span class="c1">// u: 1 1 1 1 1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">w</span><span class="p">(</span><span class="n">u</span><span class="p">);</span> <span class="c1">// w: 1 1 1 1 1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span> <span class="c1">// v: 1 2 3 4 5
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>元素访问</p>
@@ -692,6 +664,10 @@
 <td>删除某个迭代器或区间的元素</td>
 </tr>
 <tr>
+<td><code>remove()</code></td>
+<td>删除容器中所有和指定元素相等的元素</td>
+</tr>
+<tr>
 <td><code>clear()</code></td>
 <td>清空所有元素, 容器大小变为0</td>
 </tr>
@@ -701,33 +677,7 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">u</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">v</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// v: 1, 2, 3, 4, 5
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">v</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// v: 0, 1, 2, 3, 4, 5
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">v</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">u</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> <span class="c1">// v: 0, 0, 0, 1, 2, 3, 4, 5
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">v</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span> <span class="c1">// v: 0, 0, 0, 1, 2, 3, 4
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span><span class="c1">// v: 1, 2, 3, 4
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">v</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">u</span><span class="p">);</span> <span class="c1">// v: 0, 0; u: 1, 2, 3, 4
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">v</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span> <span class="c1">// v为空
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>遍历元素</p>
+<p>遍历元素</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -752,6 +702,256 @@
 </span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span><span class="o">=</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="deque">deque</h2>
+<p>定义与初始化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">deque</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">dq</span><span class="p">;</span> <span class="c1">// dq为空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">deque</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">dq</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="c1">// N可为变量; 各元素初始值为数据类型T的默认值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">deque</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">dq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span> <span class="c1">// N可为变量; val为各元素初始值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">deque</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">dq</span><span class="p">(</span><span class="n">_dq</span><span class="p">);</span> <span class="c1">// dq为_dq的拷贝, 线性复杂度
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>元素访问</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>at()</code></td>
+<td>访问指定元素, 进行越界检查, 速度慢</td>
+</tr>
+<tr>
+<td><code>operator[]</code></td>
+<td>访问指定元素, 不进行越界检查, 速度快</td>
+</tr>
+</tbody>
+</table>
+<p>容量相关</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>empty()</code></td>
+<td>检查容器是否为空</td>
+</tr>
+<tr>
+<td><code>size()</code></td>
+<td>返回容纳的元素数</td>
+</tr>
+</tbody>
+</table>
+<p>增删改操作</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>emplace_back()</code></td>
+<td>在序列尾部生成一个元素</td>
+</tr>
+<tr>
+<td><code>emplace_front()</code></td>
+<td>在序列头部生成一个元素</td>
+</tr>
+<tr>
+<td><code>pop_back()</code></td>
+<td>删除尾部的元素</td>
+</tr>
+<tr>
+<td><code>pop_front()</code></td>
+<td>删除头部的元素</td>
+</tr>
+<tr>
+<td><code>insert()</code></td>
+<td>在指定位置插入一个或多个元素</td>
+</tr>
+<tr>
+<td><code>erase()</code></td>
+<td>删除某个迭代器或区间的元素</td>
+</tr>
+<tr>
+<td><code>clear()</code></td>
+<td>清空所有元素, 容器大小变为0</td>
+</tr>
+<tr>
+<td><code>swap()</code></td>
+<td>交换两个容器的所有元素</td>
+</tr>
+</tbody>
+</table>
+<p>遍历元素</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">deque</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dq</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">it</span><span class="p">:</span><span class="n">dq</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">dq</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">dq</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span><span class="o">=</span><span class="n">dq</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">dq</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="list">list</h2>
+<p>定义与初始化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">lt</span><span class="p">;</span> <span class="c1">// lt为空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">lt</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="c1">// N可为变量; 各元素初始值为数据类型T的默认值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">lt</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span> <span class="c1">// N可为变量; val为各元素初始值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">lt</span><span class="p">(</span><span class="n">_lt</span><span class="p">);</span> <span class="c1">// lt为_lt的拷贝, 线性复杂度
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>元素访问</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>front()</code></td>
+<td>返回第一个元素的引用</td>
+</tr>
+<tr>
+<td><code>back()</code></td>
+<td>返回最后一个元素的引用</td>
+</tr>
+</tbody>
+</table>
+<p>容量相关</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>empty()</code></td>
+<td>检查容器是否为空</td>
+</tr>
+<tr>
+<td><code>size()</code></td>
+<td>返回容纳的元素数</td>
+</tr>
+</tbody>
+</table>
+<p>增删改操作</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>emplace_back()</code></td>
+<td>在序列尾部生成一个元素</td>
+</tr>
+<tr>
+<td><code>emplace_front()</code></td>
+<td>在序列头部生成一个元素</td>
+</tr>
+<tr>
+<td><code>pop_back()</code></td>
+<td>删除尾部的元素</td>
+</tr>
+<tr>
+<td><code>pop_front()</code></td>
+<td>删除头部的元素</td>
+</tr>
+<tr>
+<td><code>insert()</code></td>
+<td>在指定位置插入一个或多个元素</td>
+</tr>
+<tr>
+<td><code>erase()</code></td>
+<td>删除某个迭代器或区间的元素</td>
+</tr>
+<tr>
+<td><code>clear()</code></td>
+<td>清空所有元素, 容器大小变为0</td>
+</tr>
+<tr>
+<td><code>swap()</code></td>
+<td>交换两个容器的所有元素</td>
+</tr>
+<tr>
+<td><code>sort()</code></td>
+<td>通过更改容器中元素的位置，将它们进行排序</td>
+</tr>
+</tbody>
+</table>
+<p>遍历元素</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">lt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">it</span><span class="p">:</span><span class="n">lt</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span><span class="o">=</span><span class="n">lt</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">lt</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
