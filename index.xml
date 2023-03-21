@@ -6,7 +6,7 @@
     <description>Recent content on Zzy&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Jan 2023 18:22:43 +0800</lastBuildDate><atom:link href="https://TrivialZzy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Mar 2023 13:36:45 +0800</lastBuildDate><atom:link href="https://TrivialZzy.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>算法竞赛查询笔记</title>
       <link>https://TrivialZzy.github.io/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0/</link>
@@ -17,29 +17,20 @@
     </item>
     
     <item>
-      <title>偏导数法化简二次型</title>
-      <link>https://TrivialZzy.github.io/post/%E5%81%8F%E5%AF%BC%E6%95%B0%E6%B3%95%E5%8C%96%E7%AE%80%E4%BA%8C%E6%AC%A1%E5%9E%8B/</link>
-      <pubDate>Tue, 24 Jan 2023 18:22:43 +0800</pubDate>
+      <title>2023总结</title>
+      <link>https://TrivialZzy.github.io/post/2023%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 21 Mar 2023 13:36:45 +0800</pubDate>
       
-      <guid>https://TrivialZzy.github.io/post/%E5%81%8F%E5%AF%BC%E6%95%B0%E6%B3%95%E5%8C%96%E7%AE%80%E4%BA%8C%E6%AC%A1%E5%9E%8B/</guid>
+      <guid>https://TrivialZzy.github.io/post/2023%E6%80%BB%E7%BB%93/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>[LeetCode 题解]1824.最少侧跳次数</title>
-      <link>https://TrivialZzy.github.io/post/leetcode-%E9%A2%98%E8%A7%A31824.%E6%9C%80%E5%B0%91%E4%BE%A7%E8%B7%B3%E6%AC%A1%E6%95%B0/</link>
+      <title>LeetCode 题解</title>
+      <link>https://TrivialZzy.github.io/post/leetcode-%E9%A2%98%E8%A7%A3/</link>
       <pubDate>Sat, 21 Jan 2023 00:56:08 +0800</pubDate>
       
-      <guid>https://TrivialZzy.github.io/post/leetcode-%E9%A2%98%E8%A7%A31824.%E6%9C%80%E5%B0%91%E4%BE%A7%E8%B7%B3%E6%AC%A1%E6%95%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo 博客书写常用语句</title>
-      <link>https://TrivialZzy.github.io/post/hugo-%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/</link>
-      <pubDate>Thu, 19 Jan 2023 21:11:04 +0800</pubDate>
-      
-      <guid>https://TrivialZzy.github.io/post/hugo-%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/</guid>
+      <guid>https://TrivialZzy.github.io/post/leetcode-%E9%A2%98%E8%A7%A3/</guid>
       <description></description>
     </item>
     

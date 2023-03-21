@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Hugo 博客相关">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-19T14:55:37+08:00" />
 <meta itemprop="dateModified" content="2023-01-19T14:55:37+08:00" />
-<meta itemprop="wordCount" content="151">
+<meta itemprop="wordCount" content="305">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo 博客相关"/>
 <meta name="twitter:description" content=""/>
@@ -131,11 +131,16 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#搭建-hugo-博客">搭建 Hugo 博客</a>
       <ul>
         <li><a href="#hugo-博客的搭建及基本使用">Hugo 博客的搭建及基本使用</a></li>
         <li><a href="#github-提交更新的命令">Github 提交更新的命令</a></li>
         <li><a href="#参考文献">参考文献</a></li>
+      </ul>
+    </li>
+    <li><a href="#hugo-博客书写的常用语句">Hugo 博客书写的常用语句</a>
+      <ul>
+        <li><a href="#插入-pdf-文件">插入 PDF 文件</a></li>
       </ul>
     </li>
   </ul>
@@ -143,7 +148,9 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="hugo-博客的搭建及基本使用">Hugo 博客的搭建及基本使用</h2>
+      <h1 id="搭建-hugo-博客">搭建 Hugo 博客</h1>
+<p>前排提示: 本节内容仅保证在 <code>2023-01-19</code> 是适用的, 仅供参考.</p>
+<h2 id="hugo-博客的搭建及基本使用">Hugo 博客的搭建及基本使用</h2>
 <p>搭建可以参考<a href="https://www.bilibili.com/video/BV1QG411s7Sd/">这个视频</a>; 主题可以在<a href="https://themes.gohugo.io/">这个网站</a>查找, 安装参考各个主题的说明; 基本使用可以参考<a href="https://olowolo.com/post/hugo-quick-start/">这篇文章</a>.</p>
 <h2 id="github-提交更新的命令">Github 提交更新的命令</h2>
 <p>搭配博客搭建视频使用.</p>
@@ -181,15 +188,29 @@
 <li><a href="https://themes.gohugo.io/">Hugo Themes</a></li>
 <li><a href="https://olowolo.com/post/hugo-quick-start/">Hugo 从入门到会用</a></li>
 </ol>
+<h1 id="hugo-博客书写的常用语句">Hugo 博客书写的常用语句</h1>
+<p>(随缘更新)</p>
+<h2 id="插入-pdf-文件">插入 PDF 文件</h2>
+<p>代码如下, 其中 <code>偏导数法化简二次型.pdf</code> 所在位置为 <code>Hugo/static/PDF/偏导数法化简二次型.pdf</code>, <code>Hugo</code> 为博客根目录.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;center&gt;&lt;embed src=&#34;/PDF/偏导数法化简二次型.pdf&#34; width=&#34;800&#34; height=&#34;900&#34;&gt;&lt;/center&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>效果如下.</p>
+<center><embed src="/PDF/偏导数法化简二次型.pdf" width="800" height="900"></center>
     </div>
 
     
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/hugo-%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/">
+        <a class="prev" href="/post/leetcode-%E9%A2%98%E8%A7%A3/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Hugo 博客书写常用语句</span>
+            <span class="prev-text nav-default">LeetCode 题解</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
