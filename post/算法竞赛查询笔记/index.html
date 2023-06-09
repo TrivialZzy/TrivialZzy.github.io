@@ -49,7 +49,7 @@
 <meta itemprop="name" content="算法竞赛查询笔记">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-18T14:30:37+08:00" />
 <meta itemprop="dateModified" content="2023-01-18T14:30:37+08:00" />
-<meta itemprop="wordCount" content="2024">
+<meta itemprop="wordCount" content="1767">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="算法竞赛查询笔记"/>
 <meta name="twitter:description" content=""/>
@@ -141,7 +141,6 @@
     </li>
     <li><a href="#stl容器">STL容器</a>
       <ul>
-        <li><a href="#array">array</a></li>
         <li><a href="#vector">vector</a></li>
         <li><a href="#deque">deque</a></li>
         <li><a href="#list">list</a></li>
@@ -488,113 +487,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="stl容器">STL容器</h1>
-<h2 id="array">array</h2>
-<p>定义与初始化</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">array</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="o">&gt;</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="n">val3</span><span class="p">};</span> <span class="c1">// N为常量(可用const定义); {}内可初始化, 不写为数据类型T的默认值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">N</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">;</span> <span class="c1">// arr的值不确定
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">N</span><span class="o">&gt;</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{};</span> <span class="c1">// arr: 0, 0, 0, 0, 0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">N</span><span class="o">&gt;</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span> <span class="c1">// arr: 1, 2, 3, 0, 0
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>元素访问</p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>at()</code></td>
-<td>访问指定元素, 进行越界检查, 速度慢</td>
-</tr>
-<tr>
-<td><code>operator[]</code></td>
-<td>访问指定元素, 不进行越界检查, 速度快</td>
-</tr>
-</tbody>
-</table>
-<p>容量相关</p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>empty()</code></td>
-<td>检查容器是否为空</td>
-</tr>
-<tr>
-<td><code>size()</code></td>
-<td>返回容纳的元素数, 永远等于<code>size_max()</code></td>
-</tr>
-</tbody>
-</table>
-<p>增改操作</p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>fill()</code></td>
-<td>以指定值填充容器</td>
-</tr>
-<tr>
-<td><code>swap()</code></td>
-<td>交换内容, 前提: 具有相同的长度和类型; 时间复杂度: $O(size)$</td>
-</tr>
-</tbody>
-</table>
-<p>遍历元素</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">it</span><span class="p">:</span><span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span><span class="o">=</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">it</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="vector">vector</h2>
+<h2 id="vector">vector</h2>
 <p>定义与初始化</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -662,6 +555,10 @@
 <tr>
 <td><code>emplace_back()</code></td>
 <td>在序列尾部生成一个新元素</td>
+</tr>
+<tr>
+<td><code>push_back()</code></td>
+<td>在序列尾部生成一个新元素(可以使用<code>{}</code>)</td>
 </tr>
 <tr>
 <td><code>insert()</code></td>
