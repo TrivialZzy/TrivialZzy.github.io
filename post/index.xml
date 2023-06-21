@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Zzy&#39;s Note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Jun 2023 20:28:54 +0800</lastBuildDate><atom:link href="https://TrivialZzy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 23:42:26 +0800</lastBuildDate><atom:link href="https://TrivialZzy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>算法竞赛查询笔记</title>
       <link>https://TrivialZzy.github.io/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0/</link>
@@ -14,6 +14,15 @@
       
       <guid>https://TrivialZzy.github.io/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>折腾积累的经验</title>
+      <link>https://TrivialZzy.github.io/post/%E6%8A%98%E8%85%BE%E7%A7%AF%E7%B4%AF%E7%9A%84%E7%BB%8F%E9%AA%8C/</link>
+      <pubDate>Wed, 21 Jun 2023 23:42:26 +0800</pubDate>
+      
+      <guid>https://TrivialZzy.github.io/post/%E6%8A%98%E8%85%BE%E7%A7%AF%E7%B4%AF%E7%9A%84%E7%BB%8F%E9%AA%8C/</guid>
+      <description>&lt;p&gt;安装或配置各种东西时积累的经验, 以&lt;code&gt;macOS&lt;/code&gt;为例.&lt;/p&gt;</description>
     </item>
     
     <item>

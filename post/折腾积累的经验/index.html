@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Hugo 博客相关 - Zzy&#39;s Note</title>
+  <title>折腾积累的经验 - Zzy&#39;s Note</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Zzy" /><meta name="description" content="" />
+<meta name="author" content="Zzy" /><meta name="description" content="安装或配置各种东西时积累的经验, 以macOS为例.
+" />
 
 
 
@@ -26,7 +27,7 @@
 <meta name="generator" content="Hugo 0.110.0 with theme even" />
 
 
-<link rel="canonical" href="https://TrivialZzy.github.io/post/hugo-%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/" />
+<link rel="canonical" href="https://TrivialZzy.github.io/post/%E6%8A%98%E8%85%BE%E7%A7%AF%E7%B4%AF%E7%9A%84%E7%BB%8F%E9%AA%8C/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,19 +41,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Hugo 博客相关" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="折腾积累的经验" />
+<meta property="og:description" content="安装或配置各种东西时积累的经验, 以macOS为例." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://TrivialZzy.github.io/post/hugo-%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-19T14:55:37+08:00" />
-<meta property="article:modified_time" content="2023-01-19T14:55:37+08:00" />
-<meta itemprop="name" content="Hugo 博客相关">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-19T14:55:37+08:00" />
-<meta itemprop="dateModified" content="2023-01-19T14:55:37+08:00" />
-<meta itemprop="wordCount" content="306">
+<meta property="og:url" content="https://TrivialZzy.github.io/post/%E6%8A%98%E8%85%BE%E7%A7%AF%E7%B4%AF%E7%9A%84%E7%BB%8F%E9%AA%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-21T23:42:26+08:00" />
+<meta property="article:modified_time" content="2023-06-21T23:42:26+08:00" />
+<meta itemprop="name" content="折腾积累的经验">
+<meta itemprop="description" content="安装或配置各种东西时积累的经验, 以macOS为例."><meta itemprop="datePublished" content="2023-06-21T23:42:26+08:00" />
+<meta itemprop="dateModified" content="2023-06-21T23:42:26+08:00" />
+<meta itemprop="wordCount" content="196">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hugo 博客相关"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="折腾积累的经验"/>
+<meta name="twitter:description" content="安装或配置各种东西时积累的经验, 以macOS为例."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -117,10 +118,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Hugo 博客相关</h1>
+      <h1 class="post-title">折腾积累的经验</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-01-19 </span>
+        <span class="post-time"> 2023-06-21 </span>
         
         
       </div>
@@ -131,18 +132,9 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#搭建博客">搭建博客</a>
+    <li>
       <ul>
-        <li><a href="#hugo-博客的搭建及基本使用">Hugo 博客的搭建及基本使用</a></li>
-        <li><a href="#创建新文章">创建新文章</a></li>
-        <li><a href="#本地预览">本地预览</a></li>
-        <li><a href="#github-提交更新的命令">Github 提交更新的命令</a></li>
-        <li><a href="#参考文献">参考文献</a></li>
-      </ul>
-    </li>
-    <li><a href="#博客书写的常用语句">博客书写的常用语句</a>
-      <ul>
-        <li><a href="#插入-pdf-文件">插入 PDF 文件</a></li>
+        <li><a href="#安装colorls">安装<code>colorls</code></a></li>
       </ul>
     </li>
   </ul>
@@ -150,43 +142,54 @@
   </div>
 </div>
     <div class="post-content">
-      <h1 id="搭建博客">搭建博客</h1>
-<h2 id="hugo-博客的搭建及基本使用">Hugo 博客的搭建及基本使用</h2>
-<p>搭建可以参考<a href="https://www.bilibili.com/video/BV1QG411s7Sd/">这个视频</a>; 主题可以在<a href="https://themes.gohugo.io/">这个网站</a>查找, 安装参考各个主题的说明; 基本使用可以参考<a href="https://olowolo.com/post/hugo-quick-start/">这篇文章</a>.</p>
-<h2 id="创建新文章">创建新文章</h2>
+      <p>安装或配置各种东西时积累的经验, 以<code>macOS</code>为例.</p>
+<h2 id="安装colorls">安装<code>colorls</code></h2>
+<ul>
+<li>安装<code>ruby</code>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo new post/文章标题.md
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="本地预览">本地预览</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo server
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="github-提交更新的命令">Github 提交更新的命令</h2>
-<p>搭配博客搭建视频使用.</p>
-<ol>
-<li>
-<p>进入 Hugo 博客所在文件夹, 并执行如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install ruby
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
-<li>
-<p>进入 public 文件夹, 并执行如下命令</p>
+<li>给<code>gem</code>换源
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>下载本地文件<br>
+去<a href="https://rubygems.org/gems/colorls">这个网站</a>下载本地文件</li>
+<li>本地安装
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gem install -l colorls-1.4.6.gem
+</span></span></code></pre></td></tr></table>
+</div>
+</div>注: 去到文件所在的文件夹运行, 名称以当时下载的文件为准</li>
+<li>修改<code>shell</code>的配置文件<br>
+以<code>zsh</code>为例, 去<code>.zshrc</code>添加如下语句
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span>ruby -e <span class="s1">&#39;puts Gem.bindir&#39;</span><span class="k">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>重启终端, 完成安装<br>
+注: 可以在<code>.zshrc</code>中添加如下的<code>alias</code>语句, 方便使用
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -194,45 +197,29 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;...&#34;</span>
-</span></span><span class="line"><span class="cl">git push
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s2">&#34;colorls&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s2">&#34;colorls -l&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s2">&#34;colorls -a&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
-</ol>
-<h2 id="参考文献">参考文献</h2>
-<ol>
-<li><a href="https://www.bilibili.com/video/BV1QG411s7Sd/">[实用]基于 Github Pages 的 hugo 博客搭建</a></li>
-<li><a href="https://themes.gohugo.io/">Hugo Themes</a></li>
-<li><a href="https://olowolo.com/post/hugo-quick-start/">Hugo 从入门到会用</a></li>
-</ol>
-<h1 id="博客书写的常用语句">博客书写的常用语句</h1>
-<p>(随缘更新)</p>
-<h2 id="插入-pdf-文件">插入 PDF 文件</h2>
-<p>代码如下, 其中 <code>偏导数法化简二次型.pdf</code> 所在位置为 <code>Hugo/static/PDF/偏导数法化简二次型.pdf</code>, <code>Hugo</code> 为博客根目录.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/PDF/偏导数法化简二次型.pdf&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;900&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>效果如下.</p>
-<center><embed src="/PDF/偏导数法化简二次型.pdf" width="800" height="900"></center>
+</ul>
     </div>
 
     
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/%E5%9C%A8-leetcode-%E5%AD%A6%E4%B9%A0/">
+        <a class="prev" href="/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">在 LeetCode 学习</span>
+            <span class="prev-text nav-default">算法竞赛查询笔记</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        
+        <a class="next" href="/post/zzys-config/">
+            <span class="next-text nav-default">Zzy&#39;s Config</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>

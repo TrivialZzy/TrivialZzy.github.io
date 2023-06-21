@@ -10,20 +10,27 @@
   
   <url>
     <loc>https://TrivialZzy.github.io/post/</loc>
-    <lastmod>2023-06-09T20:28:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://TrivialZzy.github.io/post/zzys-config/</loc>
-    <lastmod>2023-06-09T20:28:54+08:00</lastmod>
+    <lastmod>2023-06-21T23:42:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://TrivialZzy.github.io/</loc>
+    <lastmod>2023-06-21T23:42:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://TrivialZzy.github.io/post/%E6%8A%98%E8%85%BE%E7%A7%AF%E7%B4%AF%E7%9A%84%E7%BB%8F%E9%AA%8C/</loc>
+    <lastmod>2023-06-21T23:42:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://TrivialZzy.github.io/post/zzys-config/</loc>
     <lastmod>2023-06-09T20:28:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
