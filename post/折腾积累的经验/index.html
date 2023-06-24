@@ -50,7 +50,7 @@
 <meta itemprop="name" content="折腾积累的经验">
 <meta itemprop="description" content="安装或配置各种东西时积累的经验, 以macOS为例."><meta itemprop="datePublished" content="2023-06-21T23:42:26+08:00" />
 <meta itemprop="dateModified" content="2023-06-21T23:42:26+08:00" />
-<meta itemprop="wordCount" content="196">
+<meta itemprop="wordCount" content="490">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="折腾积累的经验"/>
 <meta name="twitter:description" content="安装或配置各种东西时积累的经验, 以macOS为例."/>
@@ -134,6 +134,7 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#macos删除系统自带abc输入法"><code>macOS</code>删除系统自带<code>ABC</code>输入法</a></li>
         <li><a href="#安装colorls">安装<code>colorls</code></a></li>
       </ul>
     </li>
@@ -143,6 +144,55 @@
 </div>
     <div class="post-content">
       <p>安装或配置各种东西时积累的经验, 以<code>macOS</code>为例.</p>
+<h2 id="macos删除系统自带abc输入法"><code>macOS</code>删除系统自带<code>ABC</code>输入法</h2>
+<ol>
+<li>安装可以修改<code>.plist</code>文件的编辑器<br>
+安装<code>Xcode</code>或者其他可以修改<code>.plist</code>文件的编辑器</li>
+<li>关闭系统的<code>SIP</code><br>
+以<code>M</code>系列处理器的<code>mac</code>为例
+<ul>
+<li>在关机的情况下长按<strong>开机键</strong>进入<strong>恢复模式</strong></li>
+<li>选择<strong>选项</strong>, 点击<strong>继续</strong>, 登录<strong>管理员账号</strong></li>
+<li>点击<strong>实用工具</strong>, 打开<strong>终端</strong></li>
+<li>运行如下命令后重启系统
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">csrutil disable
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+注: 关闭<code>SIP</code>的步骤类似, 只是输入的命令改为
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">csrutil <span class="nb">enable</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>修改文件删除<code>ABC</code>输入法
+<ul>
+<li>重启后<strong>切换到<code>ABC</code>输入法</strong>, 打开终端, 执行如下命令
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo open ~/Library/Preferences/com.apple.HIToolbox.plist
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>依次点开<strong>Root - AppleEnabledInputSources</strong>, 找到其中的<strong>KeyboardLayout Name</strong>为**<code>ABC</code>**的项, 删掉整个项, 之后保存文件</li>
+</ul>
+</li>
+<li>重启系统, 删除完成<br>
+注: 若想找回<code>ABC</code>输入法, 直接添加键盘即可</li>
+</ol>
 <h2 id="安装colorls">安装<code>colorls</code></h2>
 <ol>
 <li>安装<code>ruby</code>
