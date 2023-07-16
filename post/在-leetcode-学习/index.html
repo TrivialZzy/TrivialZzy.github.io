@@ -49,7 +49,7 @@
 <meta itemprop="name" content="在 LeetCode 学习">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-21T00:56:08+08:00" />
 <meta itemprop="dateModified" content="2023-01-21T00:56:08+08:00" />
-<meta itemprop="wordCount" content="645">
+<meta itemprop="wordCount" content="758">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 LeetCode 学习"/>
 <meta name="twitter:description" content=""/>
@@ -159,6 +159,13 @@
             <li><a href="#题目链接-3">题目链接</a></li>
             <li><a href="#ac-代码-3">AC 代码</a></li>
             <li><a href="#注解-3">注解</a></li>
+          </ul>
+        </li>
+        <li><a href="#169多数元素摩尔投票">169.多数元素(摩尔投票)</a>
+          <ul>
+            <li><a href="#题目链接-4">题目链接</a></li>
+            <li><a href="#ac-代码-4">AC 代码</a></li>
+            <li><a href="#注解-4">注解</a></li>
           </ul>
         </li>
       </ul>
@@ -407,6 +414,38 @@
 </div><h3 id="注解-3">注解</h3>
 <p>任意两者绝对值最小(大) == 排序后相邻两者绝对值最小(大).</p>
 <p>注意套路: 最大化最小值/最小化最大值 -&gt; 二分答案.</p>
+<h2 id="169多数元素摩尔投票">169.多数元素(摩尔投票)</h2>
+<h3 id="题目链接-4">题目链接</h3>
+<p><a href="https://leetcode.cn/problems/majority-element/">169.多数元素</a></p>
+<h3 id="ac-代码-4">AC 代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">majorityElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ans</span> <span class="o">=</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl">                <span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">s</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">t</span><span class="o">==</span><span class="n">ans</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ans</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="注解-4">注解</h3>
+<p>在<code>O(1)</code>空间复杂度的情况下求出众数(要求众数的数量大于数据的一半).</p>
     </div>
 
     
