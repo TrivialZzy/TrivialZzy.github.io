@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Hugo 博客相关">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-19T14:55:37+08:00" />
 <meta itemprop="dateModified" content="2023-01-19T14:55:37+08:00" />
-<meta itemprop="wordCount" content="306">
+<meta itemprop="wordCount" content="371">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo 博客相关"/>
 <meta name="twitter:description" content=""/>
@@ -137,6 +137,7 @@
         <li><a href="#创建新文章">创建新文章</a></li>
         <li><a href="#本地预览">本地预览</a></li>
         <li><a href="#github-提交更新的命令">Github 提交更新的命令</a></li>
+        <li><a href="#添加alias语句">添加<code>alias</code>语句</a></li>
         <li><a href="#参考文献">参考文献</a></li>
       </ul>
     </li>
@@ -201,7 +202,19 @@
 </div>
 </div></li>
 </ol>
-<h2 id="参考文献">参考文献</h2>
+<h2 id="添加alias语句">添加<code>alias</code>语句</h2>
+<p>以<code>zsh</code>为例, 可以在<code>.zshrc</code>中添加如下的<code>alias</code>语句, 方便使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">hgs</span><span class="o">=</span><span class="s2">&#34;hugo server&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">hgp</span><span class="o">=</span><span class="s2">&#34;hugo &amp;&amp; cd public &amp;&amp; git add . &amp;&amp; git commit -m &#39;update&#39; &amp;&amp; git push&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="参考文献">参考文献</h2>
 <ol>
 <li><a href="https://www.bilibili.com/video/BV1QG411s7Sd/">[实用]基于 Github Pages 的 hugo 博客搭建</a></li>
 <li><a href="https://themes.gohugo.io/">Hugo Themes</a></li>
