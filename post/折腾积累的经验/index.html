@@ -50,7 +50,7 @@
 <meta itemprop="name" content="折腾积累的经验">
 <meta itemprop="description" content="安装或配置各种东西时积累的经验, 以macOS为例"><meta itemprop="datePublished" content="2023-06-21T23:42:26+08:00" />
 <meta itemprop="dateModified" content="2023-06-21T23:42:26+08:00" />
-<meta itemprop="wordCount" content="696">
+<meta itemprop="wordCount" content="955">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="折腾积累的经验"/>
 <meta name="twitter:description" content="安装或配置各种东西时积累的经验, 以macOS为例"/>
@@ -137,6 +137,7 @@
         <li><a href="#macos删除系统自带abc输入法"><code>macOS</code>删除系统自带<code>ABC</code>输入法</a></li>
         <li><a href="#安装colorls">安装<code>colorls</code></a></li>
         <li><a href="#markdwon中使用中文表格对不齐的解决方案"><code>Markdwon</code>中使用中文表格<code>|</code>对不齐的解决方案</a></li>
+        <li><a href="#使vscode-neovim的操作使用vscode的选择">使<code>VSCode Neovim</code>的操作使用<code>VSCode</code>的选择</a></li>
       </ul>
     </li>
   </ul>
@@ -155,7 +156,8 @@
 <li>在关机的情况下长按<strong>开机键</strong>进入<strong>恢复模式</strong></li>
 <li>选择<strong>选项</strong>, 点击<strong>继续</strong>, 登录<strong>管理员账号</strong></li>
 <li>点击<strong>实用工具</strong>, 打开<strong>终端</strong></li>
-<li>运行如下命令后重启系统
+<li>运行如下命令后重启系统</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -164,9 +166,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">csrutil disable
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-注: 开启<code>SIP</code>的步骤类似, 只是输入的命令改为
+</div>注: 开启<code>SIP</code>的步骤类似, 只是输入的命令改为
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -178,7 +178,8 @@
 </div></li>
 <li>修改文件删除<code>ABC</code>输入法
 <ul>
-<li>重启后<strong>切换到<code>ABC</code>输入法</strong>, 打开终端, 执行如下命令
+<li>重启后<strong>切换到<code>ABC</code>输入法</strong>, 打开终端, 执行如下命令</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -187,7 +188,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo open ~/Library/Preferences/com.apple.HIToolbox.plist
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
+</div><ul>
 <li>依次点开<strong>Root - AppleEnabledInputSources</strong>, 找到其中的<strong>KeyboardLayout Name</strong>为<code>ABC</code>的项, 删掉整个项, 之后保存文件</li>
 </ul>
 </li>
@@ -265,6 +266,84 @@
 安装<code>Sarasa Mono SC</code>字体, <code>Regular/Light/Bold/Italic</code>即可</li>
 <li>设置编辑器<br>
 以<code>VSCode</code>为例, 编辑<code>Font Family</code>加入<code>Sarasa Mono SC</code></li>
+</ol>
+<h2 id="使vscode-neovim的操作使用vscode的选择">使<code>VSCode Neovim</code>的操作使用<code>VSCode</code>的选择</h2>
+<p>参考自<a href="https://frannn.dev/posts/5baab346/">这篇文章</a>, 下面用两个例子说明</p>
+<ol>
+<li>
+<p>例1: 使用<code>command+/</code>实现多行注释</p>
+<p>在<code>VSCode</code>的<code>keybindings.json</code>中加入如下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;cmd+/&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;vscode-neovim.send&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;when&#34;</span><span class="p">:</span> <span class="s2">&#34;editorFocus &amp;&amp; neovim.mode == &#39;visual&#39;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;C-/&gt;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再将如下代码加入到<code>init.vim</code>中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34; 行注释
+</span></span><span class="line"><span class="cl">vnoremap &lt;C-/&gt; &lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;CR&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;editor.action.commentLine&#39;)&lt;CR&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>例2: 使用<code>command+f</code>实现<code>VSCode</code>的搜索</p>
+<p>在<code>VSCode</code>的<code>keybindings.json</code>中加入如下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;cmd+f&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;vscode-neovim.send&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;when&#34;</span><span class="p">:</span> <span class="s2">&#34;editorFocus &amp;&amp; neovim.mode == &#39;visual&#39;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;C-f&gt;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再将如下代码加入到<code>init.vim</code>中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;cmd+f&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;vscode-neovim.send&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;when&#34;</span><span class="p">:</span> <span class="s2">&#34;editorFocus &amp;&amp; neovim.mode == &#39;visual&#39;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;C-f&gt;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
     </div>
 

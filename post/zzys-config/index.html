@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Zzy&#39;s Config">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-06-09T20:28:54+08:00" />
 <meta itemprop="dateModified" content="2023-06-09T20:28:54+08:00" />
-<meta itemprop="wordCount" content="662">
+<meta itemprop="wordCount" content="736">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zzy&#39;s Config"/>
 <meta name="twitter:description" content=""/>
@@ -201,9 +201,29 @@
 </span><span class="lnt">53
 </span><span class="lnt">54
 </span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">let mapleader=&#34; &#34; &#34; 设置 Leader 键
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">let mapleader=&#39; &#39; &#34; 设置 Leader 键
 </span></span><span class="line"><span class="cl">&#34; set clipboard=unnamed &#34; 系统剪贴板
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">&#34; 移动设置
@@ -211,52 +231,72 @@
 </span></span><span class="line"><span class="cl">noremap K 5k
 </span></span><span class="line"><span class="cl">noremap H ^
 </span></span><span class="line"><span class="cl">noremap L $
+</span></span><span class="line"><span class="cl">noremap s &lt;nop&gt;
 </span></span><span class="line"><span class="cl">&#34; 取消高亮
 </span></span><span class="line"><span class="cl">noremap &lt;LEADER&gt;&lt;CR&gt; :nohlsearch&lt;CR&gt;
 </span></span><span class="line"><span class="cl">&#34; 缩进设置
 </span></span><span class="line"><span class="cl">nnoremap &gt; &gt;&gt;
 </span></span><span class="line"><span class="cl">nnoremap &lt; &lt;&lt;
 </span></span><span class="line"><span class="cl">&#34; 可视模式下系统剪贴板设置
-</span></span><span class="line"><span class="cl">vnoremap &lt;C_c&gt; &#34;+y
-</span></span><span class="line"><span class="cl">vnoremap y &#34;+y
+</span></span><span class="line"><span class="cl">vnoremap &lt;C-c&gt; &#34;+y
+</span></span><span class="line"><span class="cl">&#34; 全选复制
+</span></span><span class="line"><span class="cl">noremap Y ggVG&#34;+y
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">map S :w&lt;CR&gt;
 </span></span><span class="line"><span class="cl">map Q :q&lt;CR&gt;
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">if exists(&#39;g:vscode&#39;)
-</span></span><span class="line"><span class="cl">  &#34; VSCode extension
-</span></span><span class="line"><span class="cl">else
-</span></span><span class="line"><span class="cl">    &#34; ordinary Neovim
-</span></span><span class="line"><span class="cl">    syntax on &#34; 语法高亮
-</span></span><span class="line"><span class="cl">    set scrolloff=5 &#34; 内容上下保存 5 个单位
-</span></span><span class="line"><span class="cl">    set number &#34; 行号
-</span></span><span class="line"><span class="cl">    set relativenumber &#34; 相对行号
-</span></span><span class="line"><span class="cl">    &#34; 缩进设置 begin
-</span></span><span class="line"><span class="cl">    set tabstop=4
-</span></span><span class="line"><span class="cl">    set softtabstop=4
-</span></span><span class="line"><span class="cl">    set shiftwidth=4
-</span></span><span class="line"><span class="cl">    set noexpandtab
-</span></span><span class="line"><span class="cl">    &#34; 缩进设置 end
-</span></span><span class="line"><span class="cl">    set cursorline &#34; 高亮行
-</span></span><span class="line"><span class="cl">    set wrap &#34; 一行内容不超出屏幕
-</span></span><span class="line"><span class="cl">    &#34; 选择下一个高亮并居中
-</span></span><span class="line"><span class="cl">    noremap = nzz
-</span></span><span class="line"><span class="cl">    &#34; 选择上一个高亮并居中
-</span></span><span class="line"><span class="cl">    noremap - Nzz
+</span></span><span class="line"><span class="cl">    &#34; VSCode
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    map R :so %&lt;CR&gt;
+</span></span><span class="line"><span class="cl">    &#34; 行注释
+</span></span><span class="line"><span class="cl">    vnoremap &lt;C-/&gt; &lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;CR&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;editor.action.commentLine&#39;)&lt;CR&gt;
+</span></span><span class="line"><span class="cl">    &#34; 使用 VSCode 的搜索
+</span></span><span class="line"><span class="cl">    vnoremap &lt;C-f&gt; &lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;CR&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;actions.find&#39;)&lt;CR&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &#34; 插件
+</span></span><span class="line"><span class="cl">    call plug#begin(&#39;~/.config/nvim/plugged&#39;)
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    Plug &#39;tpope/vim-surround&#39;
+</span></span><span class="line"><span class="cl">    Plug &#39;ybian/smartim&#39;
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    call plug#end()
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">else
+</span></span><span class="line"><span class="cl">	&#34; Neovim
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    syntax on &#34; 语法高亮
+</span></span><span class="line"><span class="cl">	set scrolloff=5 &#34; 内容上下保存 5 个单位
+</span></span><span class="line"><span class="cl">	set number &#34; 行号
+</span></span><span class="line"><span class="cl">	set relativenumber &#34; 相对行号
+</span></span><span class="line"><span class="cl">	&#34; 缩进设置 begin
+</span></span><span class="line"><span class="cl">	set tabstop=4
+</span></span><span class="line"><span class="cl">	set softtabstop=4
+</span></span><span class="line"><span class="cl">	set shiftwidth=4
+</span></span><span class="line"><span class="cl">	set expandtab
+</span></span><span class="line"><span class="cl">	&#34; 缩进设置 end
+</span></span><span class="line"><span class="cl">	set wildmenu &#34; 更好的命令行补全
+</span></span><span class="line"><span class="cl">	set cursorline &#34; 高亮行
+</span></span><span class="line"><span class="cl">	set wrap &#34; 一行内容不超出屏幕
+</span></span><span class="line"><span class="cl">	&#34; 选择下一个高亮并居中
+</span></span><span class="line"><span class="cl">	noremap = nzz
+</span></span><span class="line"><span class="cl">	&#34; 选择上一个高亮并居中
+</span></span><span class="line"><span class="cl">	noremap - Nzz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	map R :so %&lt;CR&gt;
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    &#34; 插件
 </span></span><span class="line"><span class="cl">    call plug#begin(&#39;~/.config/nvim/plugged&#39;)
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    Plug &#39;connorholyday/vim-snazzy&#39;
-</span></span><span class="line"><span class="cl">    Plug &#39;vim-airline/vim-airline&#39;
 </span></span><span class="line"><span class="cl">    Plug &#39;jiangmiao/auto-pairs&#39;
-</span></span><span class="line"><span class="cl">    Plug &#39;lambdalisue/suda.vim&#39;
+</span></span><span class="line"><span class="cl">    Plug &#39;tpope/vim-surround&#39;
+</span></span><span class="line"><span class="cl">    Plug &#39;arzg/vim-colors-xcode&#39;
+</span></span><span class="line"><span class="cl">    Plug &#39;ybian/smartim&#39;
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    call plug#end() 
+</span></span><span class="line"><span class="cl">    call plug#end()
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    colorscheme snazzy
+</span></span><span class="line"><span class="cl">	&#34; 主题
+</span></span><span class="line"><span class="cl">	colorscheme xcode
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">endif
 </span></span></code></pre></td></tr></table>
 </div>
