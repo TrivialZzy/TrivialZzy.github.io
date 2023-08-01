@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Zzy&#39;s Config">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-06-09T20:28:54+08:00" />
 <meta itemprop="dateModified" content="2023-06-09T20:28:54+08:00" />
-<meta itemprop="wordCount" content="1696">
+<meta itemprop="wordCount" content="1540">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zzy&#39;s Config"/>
 <meta name="twitter:description" content=""/>
@@ -134,6 +134,7 @@
     <li><a href="#neovim">Neovim</a>
       <ul>
         <li><a href="#initlua"><code>init.lua</code></a></li>
+        <li><a href="#generallua"><code>General.lua</code></a></li>
         <li><a href="#lazynvimlua"><code>Lazynvim.lua</code></a></li>
         <li><a href="#neovimlua"><code>Neovim.lua</code></a></li>
         <li><a href="#vscodelua"><code>VSCode.lua</code></a></li>
@@ -178,11 +179,13 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/Users/~/.config/nvim
 </span></span><span class="line"><span class="cl">├── init.lua
 </span></span><span class="line"><span class="cl">└── lua
+</span></span><span class="line"><span class="cl">    ├── General.lua
 </span></span><span class="line"><span class="cl">    ├── Lazynvim.lua
 </span></span><span class="line"><span class="cl">    ├── Neovim.lua
 </span></span><span class="line"><span class="cl">    ├── VSCode.lua
@@ -228,6 +231,79 @@
 </span></span><span class="line"><span class="cl">    <span class="c1">-- ordinary Neovim</span>
 </span></span><span class="line"><span class="cl">    <span class="n">require</span><span class="p">(</span><span class="s2">&#34;Neovim&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="generallua"><code>General.lua</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">---- 设置 ----</span>
+</span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 宏命令瞬间完成</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.o</span><span class="p">.</span><span class="n">lazyredraw</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">---- 键位 ----</span>
+</span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 移动设置</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;5j&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;5k&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 选择下一个高亮并居中</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;nzz&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 选择上一个高亮并居中</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;Nzz&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 取消高亮</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;leader&gt;&lt;cr&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;nohlsearch&lt;cr&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 可视模式下复制到系统剪贴板</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;&#34;+y&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 全选且复制</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;ggVG&#34;+y&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 缩进设置</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&lt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 保存</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;w&lt;cr&gt;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 退出</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;q&lt;cr&gt;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 禁用 s 键</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Nop&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="lazynvimlua"><code>Lazynvim.lua</code></h2>
@@ -297,39 +373,11 @@
 </span><span class="lnt">29
 </span><span class="lnt">30
 </span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--------------</span>
 </span></span><span class="line"><span class="cl"><span class="c1">---- 设置 ----</span>
 </span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 宏命令瞬间完成</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.o</span><span class="p">.</span><span class="n">lazyredraw</span> <span class="o">=</span> <span class="kc">true</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 使用鼠标</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.o</span><span class="p">.</span><span class="n">mouse</span> <span class="o">=</span> <span class="s2">&#34;a&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 语法高亮</span>
@@ -356,113 +404,29 @@
 </span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
 </span></span><span class="line"><span class="cl"><span class="c1">---- 键位 ----</span>
 </span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 移动设置</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;5j&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;5k&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 选择下一个高亮并居中</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;nzz&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 选择上一个高亮并居中</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;Nzz&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 取消高亮</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;leader&gt;&lt;cr&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;nohlsearch&lt;cr&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 可视模式下复制到系统剪贴板</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;&#34;+y&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 全选且复制</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;ggVG&#34;+y&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 缩进设置</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&lt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 保存</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;w&lt;cr&gt;&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 退出</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;q&lt;cr&gt;&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 加载配置</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;so %&lt;cr&gt;&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 禁用 s 键</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Nop&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="vscodelua"><code>VSCode.lua</code></h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--------------</span>
-</span></span><span class="line"><span class="cl"><span class="c1">---- 设置 ----</span>
-</span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 宏命令瞬间完成</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.o</span><span class="p">.</span><span class="n">lazyredraw</span> <span class="o">=</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
 </span></span><span class="line"><span class="cl"><span class="c1">---- 键位 ----</span>
 </span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 移动设置</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;5j&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;5k&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 行注释</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-/&gt;&#39;</span><span class="p">,</span> <span class="s2">&#34;&lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;cr&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;editor.action.commentLine&#39;)&lt;cr&gt;&#34;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 搜索</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-f&gt;&#39;</span><span class="p">,</span> <span class="s2">&#34;&lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;cr&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;actions.find&#39;)&lt;cr&gt;&#34;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 选择下一个高亮并居中</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;nzz&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 选择上一个高亮并居中</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;Nzz&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 取消高亮</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;leader&gt;&lt;cr&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;nohlsearch&lt;cr&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 可视模式下复制到系统剪贴板</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;&#34;+y&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 全选且复制</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;ggVG&#34;+y&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 缩进设置</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&lt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 保存</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;w&lt;cr&gt;&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 退出</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;cmd&gt;q&lt;cr&gt;&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">-- 禁用 s 键</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Nop&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="plugins"><code>plugins</code></h2>
