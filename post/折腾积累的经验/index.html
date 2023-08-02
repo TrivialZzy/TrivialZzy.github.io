@@ -50,7 +50,7 @@
 <meta itemprop="name" content="折腾积累的经验">
 <meta itemprop="description" content="安装或配置各种东西时积累的经验, 以macOS为例"><meta itemprop="datePublished" content="2023-06-21T23:42:26+08:00" />
 <meta itemprop="dateModified" content="2023-06-21T23:42:26+08:00" />
-<meta itemprop="wordCount" content="955">
+<meta itemprop="wordCount" content="978">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="折腾积累的经验"/>
 <meta name="twitter:description" content="安装或配置各种东西时积累的经验, 以macOS为例"/>
@@ -138,6 +138,7 @@
         <li><a href="#安装colorls">安装<code>colorls</code></a></li>
         <li><a href="#markdwon中使用中文表格对不齐的解决方案"><code>Markdwon</code>中使用中文表格<code>|</code>对不齐的解决方案</a></li>
         <li><a href="#使vscode-neovim的操作使用vscode的选择">使<code>VSCode Neovim</code>的操作使用<code>VSCode</code>的选择</a></li>
+        <li><a href="#maxos使用万能头文件"><code>maxOS</code>使用万能头文件</a></li>
       </ul>
     </li>
   </ul>
@@ -291,20 +292,20 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>再将如下代码加入到<code>init.vim</code>中</p>
+</div><p>再将如下代码加入到<code>VSCode.lua</code>中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34; 行注释
-</span></span><span class="line"><span class="cl">vnoremap &lt;C-/&gt; &lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;CR&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;editor.action.commentLine&#39;)&lt;CR&gt;
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- 行注释</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-/&gt;&#39;</span><span class="p">,</span> <span class="s2">&#34;&lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;cr&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;editor.action.commentLine&#39;)&lt;cr&gt;&#34;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
-<p>例2: 使用<code>command+f</code>实现<code>VSCode</code>的搜索</p>
+<p>例2: 使用<code>command+f</code>实现<code>VSCode</code>的搜索替换</p>
 <p>在<code>VSCode</code>的<code>keybindings.json</code>中加入如下代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -324,27 +325,21 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>再将如下代码加入到<code>init.vim</code>中</p>
+</div><p>再将如下代码加入到<code>VSCode.lua</code>中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;cmd+f&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;vscode-neovim.send&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;when&#34;</span><span class="p">:</span> <span class="s2">&#34;editorFocus &amp;&amp; neovim.mode == &#39;visual&#39;&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;C-f&gt;&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- 搜索替换</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-f&gt;&#39;</span><span class="p">,</span> <span class="s2">&#34;&lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;cr&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;action.startFindReplaceAction&#39;)&lt;cr&gt;&#34;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
+<h2 id="maxos使用万能头文件"><code>maxOS</code>使用万能头文件</h2>
+<p>参考<a href="https://qiuyedx.com/?p=1349">这篇文章</a></p>
     </div>
 
     
