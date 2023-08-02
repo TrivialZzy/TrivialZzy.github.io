@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Zzy&#39;s Config">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-06-09T20:28:54+08:00" />
 <meta itemprop="dateModified" content="2023-06-09T20:28:54+08:00" />
-<meta itemprop="wordCount" content="1550">
+<meta itemprop="wordCount" content="1652">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zzy&#39;s Config"/>
 <meta name="twitter:description" content=""/>
@@ -142,6 +142,7 @@
           <ul>
             <li><a href="#auto-dark-modelua"><code>auto-dark-mode.lua</code></a></li>
             <li><a href="#auto-pairslua"><code>auto-pairs.lua</code></a></li>
+            <li><a href="#flashlua"><code>flash.lua</code></a></li>
             <li><a href="#lualinelua"><code>lualine.lua</code></a></li>
             <li><a href="#smartimlua"><code>smartim.lua</code></a></li>
             <li><a href="#vim-colors-xcodelua"><code>vim-colors-xcode.lua</code></a></li>
@@ -180,6 +181,7 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/Users/~/.config/nvim
@@ -192,6 +194,7 @@
 </span></span><span class="line"><span class="cl">    └── plugins
 </span></span><span class="line"><span class="cl">        ├── auto-dark-mode.lua
 </span></span><span class="line"><span class="cl">        ├── auto-pairs.lua
+</span></span><span class="line"><span class="cl">        ├── flash.lua
 </span></span><span class="line"><span class="cl">        ├── lualine.lua
 </span></span><span class="line"><span class="cl">        ├── smartim.lua
 </span></span><span class="line"><span class="cl">        ├── vim-colors-xcode.lua
@@ -215,18 +218,9 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- Leader 键</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.g</span><span class="p">.</span><span class="n">mapleader</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">-- Lazy.nvim</span>
-</span></span><span class="line"><span class="cl"><span class="n">require</span><span class="p">(</span><span class="s2">&#34;Lazynvim&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">-- 配置</span>
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- 配置</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- General</span>
 </span></span><span class="line"><span class="cl"><span class="n">require</span><span class="p">(</span><span class="s2">&#34;General&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- VSCode and Neovim</span>
@@ -237,6 +231,9 @@
 </span></span><span class="line"><span class="cl">    <span class="c1">-- ordinary Neovim</span>
 </span></span><span class="line"><span class="cl">    <span class="n">require</span><span class="p">(</span><span class="s2">&#34;Neovim&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Lazy.nvim</span>
+</span></span><span class="line"><span class="cl"><span class="n">require</span><span class="p">(</span><span class="s2">&#34;Lazynvim&#34;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="generallua"><code>General.lua</code></h2>
@@ -275,11 +272,15 @@
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--------------</span>
 </span></span><span class="line"><span class="cl"><span class="c1">---- 设置 ----</span>
 </span></span><span class="line"><span class="cl"><span class="c1">--------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- Leader 键</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.g</span><span class="p">.</span><span class="n">mapleader</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 宏命令瞬间完成</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.o</span><span class="p">.</span><span class="n">lazyredraw</span> <span class="o">=</span> <span class="kc">true</span>
 </span></span><span class="line"><span class="cl">
@@ -518,6 +519,53 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="flashlua"><code>flash.lua</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kr">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;folke/flash.nvim&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">event</span> <span class="o">=</span> <span class="s2">&#34;VeryLazy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">---@type Flash.Config</span>
+</span></span><span class="line"><span class="cl">    <span class="n">opts</span> <span class="o">=</span> <span class="p">{},</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">-- stylua: ignore</span>
+</span></span><span class="line"><span class="cl">    <span class="n">keys</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;&lt;M-j&gt;&#34;</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;n&#34;</span><span class="p">,</span> <span class="s2">&#34;x&#34;</span><span class="p">,</span> <span class="s2">&#34;o&#34;</span> <span class="p">},</span> <span class="kr">function</span><span class="p">()</span> <span class="n">require</span><span class="p">(</span><span class="s2">&#34;flash&#34;</span><span class="p">).</span><span class="n">jump</span><span class="p">()</span> <span class="kr">end</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&#34;Flash&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cond</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">if</span> <span class="n">vim.g</span><span class="p">.</span><span class="n">vscode</span> <span class="kr">then</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">return</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">else</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">return</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">end</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h3 id="lualinelua"><code>lualine.lua</code></h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -621,10 +669,20 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="kr">return</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;tpope/vim-surround&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;kylechui/nvim-surround&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">version</span> <span class="o">=</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span> <span class="c1">-- Use for stability; omit to use `main` branch for the latest features</span>
+</span></span><span class="line"><span class="cl">    <span class="n">event</span> <span class="o">=</span> <span class="s2">&#34;VeryLazy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">config</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">require</span><span class="p">(</span><span class="s2">&#34;nvim-surround&#34;</span><span class="p">).</span><span class="n">setup</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">end</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
