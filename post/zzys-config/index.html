@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Zzy&#39;s Config">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-06-09T20:28:54+08:00" />
 <meta itemprop="dateModified" content="2023-06-09T20:28:54+08:00" />
-<meta itemprop="wordCount" content="1654">
+<meta itemprop="wordCount" content="1668">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zzy&#39;s Config"/>
 <meta name="twitter:description" content=""/>
@@ -274,6 +274,8 @@
 </span><span class="lnt">33
 </span><span class="lnt">34
 </span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">--------------</span>
@@ -302,6 +304,8 @@
 </span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;&#34;+y&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 全选且复制</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;ggVG&#34;+y&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 跳转至最上方输入</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;gk&#39;</span><span class="p">,</span> <span class="s1">&#39;ggO&lt;ESC&gt;O&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">-- 缩进设置</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&gt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&lt;&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
