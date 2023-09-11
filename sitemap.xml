@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://TrivialZzy.github.io/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://TrivialZzy.github.io/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0c&#43;&#43;%E7%AF%87/</loc>
     <lastmod>2023-01-18T14:30:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -10,14 +10,21 @@
   
   <url>
     <loc>https://TrivialZzy.github.io/post/</loc>
-    <lastmod>2023-06-21T23:42:26+08:00</lastmod>
+    <lastmod>2023-09-11T17:03:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://TrivialZzy.github.io/</loc>
-    <lastmod>2023-06-21T23:42:26+08:00</lastmod>
+    <lastmod>2023-09-11T17:03:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://TrivialZzy.github.io/post/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%9F%A5%E8%AF%A2%E7%AC%94%E8%AE%B0python%E7%AF%87/</loc>
+    <lastmod>2023-09-11T17:03:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
