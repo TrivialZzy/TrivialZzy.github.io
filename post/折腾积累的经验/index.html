@@ -50,7 +50,7 @@
 <meta itemprop="name" content="折腾积累的经验">
 <meta itemprop="description" content="安装或配置各种东西时积累的经验, 以macOS为例"><meta itemprop="datePublished" content="2023-06-21T23:42:26+08:00" />
 <meta itemprop="dateModified" content="2023-06-21T23:42:26+08:00" />
-<meta itemprop="wordCount" content="978">
+<meta itemprop="wordCount" content="996">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="折腾积累的经验"/>
 <meta name="twitter:description" content="安装或配置各种东西时积累的经验, 以macOS为例"/>
@@ -305,7 +305,7 @@
 </div>
 </div></li>
 <li>
-<p>例2: 使用<code>command+f</code>实现<code>VSCode</code>的搜索替换</p>
+<p>例2: 使用<code>command+f</code>实现<code>VSCode</code>的搜索替换(<strong>此方法失效, 暂时没有找到解决方案</strong>)</p>
 <p>在<code>VSCode</code>的<code>keybindings.json</code>中加入如下代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -333,7 +333,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-lua" data-lang="lua"><span class="line"><span class="cl"><span class="c1">-- 搜索替换</span>
-</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-f&gt;&#39;</span><span class="p">,</span> <span class="s2">&#34;&lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;cr&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;action.startFindReplaceAction&#39;)&lt;cr&gt;&#34;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim.keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-f&gt;&#39;</span><span class="p">,</span> <span class="s2">&#34;&lt;cmd&gt;call VSCodeNotifyVisual(&#39;noop&#39;, 1)&lt;cr&gt;&lt;Esc&gt;&lt;cmd&gt;call VSCodeNotify(&#39;editor.action.startFindReplaceAction&#39;)&lt;cr&gt;&#34;</span><span class="p">,</span> <span class="p">{</span><span class="n">remap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">})</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
