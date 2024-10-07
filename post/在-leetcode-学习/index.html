@@ -49,7 +49,7 @@
 <meta itemprop="name" content="在 LeetCode 学习">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-21T00:56:08+08:00" />
 <meta itemprop="dateModified" content="2023-01-21T00:56:08+08:00" />
-<meta itemprop="wordCount" content="758">
+<meta itemprop="wordCount" content="1067">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 LeetCode 学习"/>
 <meta name="twitter:description" content=""/>
@@ -154,7 +154,7 @@
             <li><a href="#注解-2">注解</a></li>
           </ul>
         </li>
-        <li><a href="#2517礼盒的最大甜蜜度最大化最小值最小化最大值---二分答案">2517.礼盒的最大甜蜜度(最大化最小值/最小化最大值 -&gt; 二分答案)</a>
+        <li><a href="#2517礼盒的最大甜蜜度最大化最小值最小化最大值--二分答案">2517.礼盒的最大甜蜜度(最大化最小值/最小化最大值 =&gt; 二分答案)</a>
           <ul>
             <li><a href="#题目链接-3">题目链接</a></li>
             <li><a href="#ac-代码-3">AC 代码</a></li>
@@ -166,6 +166,13 @@
             <li><a href="#题目链接-4">题目链接</a></li>
             <li><a href="#ac-代码-4">AC 代码</a></li>
             <li><a href="#注解-4">注解</a></li>
+          </ul>
+        </li>
+        <li><a href="#871最低加油次数反悔贪心-优先队列贪心">871.最低加油次数(反悔贪心: 优先队列+贪心)</a>
+          <ul>
+            <li><a href="#题目链接-5">题目链接</a></li>
+            <li><a href="#ac-代码-5">AC 代码</a></li>
+            <li><a href="#注解-5">注解</a></li>
           </ul>
         </li>
       </ul>
@@ -290,7 +297,7 @@
 </div>
 </div><h3 id="注解-1">注解</h3>
 <p>简单题, 但我不会.</p>
-<p>值得注意的是上取整: 对于 $x, y\in\mathbb{Z}_+$, $\lceil y/x \rceil = int((y+x-1)/x)$.</p>
+<p>值得注意的是上取整: 对于 $x, y\in\mathbb{Z}_+$, $\lceil x/y \rceil = int((x+y-1)/y)$.</p>
 <h2 id="1130叶值的最小代价生成树区间dp">1130.叶值的最小代价生成树(区间DP)</h2>
 <h3 id="题目链接-2">题目链接</h3>
 <p><a href="https://leetcode.cn/problems/minimum-cost-tree-from-leaf-values/">1130.叶值的最小代价生成树</a></p>
@@ -342,8 +349,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="注解-2">注解</h3>
-<p>注意区间DP时的枚举顺序, 是正序还是倒序.</p>
-<h2 id="2517礼盒的最大甜蜜度最大化最小值最小化最大值---二分答案">2517.礼盒的最大甜蜜度(最大化最小值/最小化最大值 -&gt; 二分答案)</h2>
+<p>注意 <code>区间DP</code> 时的枚举顺序, 是正序还是倒序.</p>
+<h2 id="2517礼盒的最大甜蜜度最大化最小值最小化最大值--二分答案">2517.礼盒的最大甜蜜度(最大化最小值/最小化最大值 =&gt; 二分答案)</h2>
 <h3 id="题目链接-3">题目链接</h3>
 <p><a href="https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/">2517.礼盒的最大甜蜜度</a></p>
 <h3 id="ac-代码-3">AC 代码</h3>
@@ -413,7 +420,7 @@
 </div>
 </div><h3 id="注解-3">注解</h3>
 <p>任意两者绝对值最小(大) == 排序后相邻两者绝对值最小(大).</p>
-<p>注意套路: 最大化最小值/最小化最大值 -&gt; 二分答案.</p>
+<p>注意套路: 最大化最小值/最小化最大值 =&gt; 二分答案.</p>
 <h2 id="169多数元素摩尔投票">169.多数元素(摩尔投票)</h2>
 <h3 id="题目链接-4">题目链接</h3>
 <p><a href="https://leetcode.cn/problems/majority-element/">169.多数元素</a></p>
@@ -445,7 +452,54 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="注解-4">注解</h3>
-<p>在<code>O(1)</code>空间复杂度的情况下求出众数(要求众数的数量大于数据的一半).</p>
+<p>在 <code>O(1)</code> 空间复杂度的情况下求出众数(要求众数的数量大于数据的一半).</p>
+<h2 id="871最低加油次数反悔贪心-优先队列贪心">871.最低加油次数(反悔贪心: 优先队列+贪心)</h2>
+<h3 id="题目链接-5">题目链接</h3>
+<p><a href="https://leetcode.cn/problems/minimum-number-of-refueling-stops/">871.最低加油次数</a></p>
+<h3 id="ac-代码-5">AC 代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">minRefuelStops</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">startFuel</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">stations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tot</span> <span class="o">=</span> <span class="n">startFuel</span>
+</span></span><span class="line"><span class="cl">        <span class="n">h</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># 小根堆</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">stations</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tot</span> <span class="o">-=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">idx</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="n">h</span> <span class="ow">and</span> <span class="n">tot</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># 考虑油箱的油不够的情况</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tot</span> <span class="o">+=</span> <span class="o">-</span><span class="n">heappop</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">tot</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">idx</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ans</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="注解-5">注解</h3>
+<p>首先想到的是 <code>DP</code>, 但是状态转移方程不好构造, 主要是对于油箱的容量没有限制, 感觉很容易就MLE.</p>
+<p>然后想到的是递推, 递推方程很容易构造, 但是仔细一想状态数是 $2^{len(stations)}$, 显然不可做.</p>
+<p>最后参考灵神的答案, 是<strong>优先队列+贪心</strong>. 优先队列的题做的比较少, 我又是贪心苦手&hellip;全当一个记录, 希望以后做类似的题目时可以想到.</p>
+<p>注意: <code>C++</code> 中的 <code>priority_queue&lt;int&gt;</code> 是大根堆, 去年校赛被坑了一次, 可不能记错了.</p>
     </div>
 
     
